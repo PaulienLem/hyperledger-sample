@@ -1,0 +1,19 @@
+{
+  "routes": [
+    {
+      "route": "/v1/query/:enrollId/:fcn/:queryArg",
+      "method": "GET",
+      "controller": "../controllers/v1/hyperledger/query-controller"
+    },
+    {
+      "route": "/v1/invoke",
+      "method": "POST",
+      "controller": "../controllers/v1/hyperledger/invoke-controller"
+    },
+    {
+      "route": "/v1/register-user/:enrollId",
+      "method": "GET",
+      "controller": "../controllers/v1/hyperledger/register-user-controller"
+    }
+  ]
+}
