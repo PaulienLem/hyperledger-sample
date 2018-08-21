@@ -1,2 +1,4 @@
 .idea
-.hfc-key-store
+/hfc-key-store
+hfc-key-store
+*/hfc-key-store
