@@ -1,4 +1,4 @@
-# hyperledger-sample
+# Hyperledger example
 
 <h2>Setup</h2>
 
@@ -19,6 +19,6 @@
 - to redeploy chaincode: ./teardown.sh and restart (TODO - solve this more efficient)
 
 <h2>Run backend</h2>
-- npm install
-- npm start
+* npm install
+* npm start
 
