@@ -1,0 +1,36 @@
+{
+  "name": "hyperledger-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "hyperledger-backend/server.js",
+  "scripts": {
+    "test": "mocha",
+    "test-coverage": "npm test && istanbul cover node_modules/mocha/bin/_mocha -- -R spec",
+    "install-local": "npm install -g mocha & npm install -g node-inspector & npm install",
+    "start": "node hyperledger-backend/server.js",
+    "debug": "node-debug hyperledger-backend/server.js 0 dev 127.0.0.1 3000 9000"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "",
+  "license": "",
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "istanbul": "^0.4.5",
+    "mocha": "^5.2.0",
+    "sinon": "^6.1.5"
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cluster-service": "^2.1.1",
+    "express": "^4.16.3",
+    "fabric-ca-client": "~1.2.0",
+    "fabric-client": "~1.2.0",
+    "grpc": "^1.6.0"
+  }
+}
