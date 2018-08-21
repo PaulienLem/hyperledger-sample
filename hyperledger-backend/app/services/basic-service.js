@@ -8,7 +8,7 @@ var peer = fabric_client.newPeer('grpc://localhost:7051');
 channel.addPeer(peer);
 var order = fabric_client.newOrderer('grpc://localhost:7050')
 channel.addOrderer(order);
-var store_path = path.join('blockchain/hfc-key-store');
+var store_path = path.resolve(__dirname) + '/hfc-key-store';
 let crypto_suite = null;
 Fabric_Client.newDefaultKeyValueStore({
     path: store_path
