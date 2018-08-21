@@ -1,7 +1,6 @@
 'use strict';
 
 var basicService = require('./basic-service.js')
-var member_user = null;
 var tx_id = null;
 
 function InvokeService() {
@@ -9,14 +8,9 @@ function InvokeService() {
 
 InvokeService.prototype = {
     invoke: async function (enrollId, functionName, args) {
-        const infoArray = await basicService.getUser(enrollId);
-        const user_from_store = infoArray[0];
-        const channel = infoArray[1];
-        const fabric_client = infoArray[2];
-        const peer = infoArray[3]
-        member_user = user_from_store;
+        const member_user = await basicService.getUser(enrollId);
         args.push(member_user.getName());
-        tx_id = fabric_client.newTransactionID();
+        tx_id = basicService.fabric_client.newTransactionID();
         var request = {
             chaincodeId: 'mycc',
             fcn: functionName,
@@ -24,7 +18,7 @@ InvokeService.prototype = {
             chainId: 'mychannel',
             txId: tx_id
         };
-        channel.sendTransactionProposal(request).then((results) => {
+        basicService.channel.sendTransactionProposal(request).then((results) => {
             var proposalResponses = results[0];
             var proposal = results[1];
             let isProposalGood = false;
@@ -38,9 +32,9 @@ InvokeService.prototype = {
                 };
                 var transaction_id_string = tx_id.getTransactionID();
                 var promises = [];
-                var sendPromise = channel.sendTransaction(request);
+                var sendPromise = basicService.channel.sendTransaction(request);
                 promises.push(sendPromise);
-                let event_hub = channel.newChannelEventHub(peer);
+                let event_hub = basicService.channel.newChannelEventHub(basicService.peer);
                 let txPromise = new Promise((resolve, reject) => {
                     let handle = setTimeout(() => {
                         event_hub.unregisterTxEvent(transaction_id_string);
