@@ -4,7 +4,8 @@ function InvokeController() {
 }
 
 function post(req, res, next) {
-    const rp = invokeService.invoke('Lander', "createCoachingPlan", ["PLAN9", "Lander", "Paulien", "Cookies"]);
+    console.log(req.body)
+    const rp = invokeService.invoke(req.body.invoker, req.body.invokeFcn, req.body.invokeArgs);
     rp.then((res)=>console.log(res))
     res.status(200).json(rp);
 }
