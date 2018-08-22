@@ -3,8 +3,8 @@
 <h2>Setup</h2>
 
 - make sure go is installed correctly and $GOPATH and $GOROOT are set
-- Setup I used on Mac:
-    * Install go with homebrew
+- Setup on Mac:
+    * Install go 
     * Edit ~/.bash_profile :
         ``` 
          export GOPATH=$HOME/go
@@ -29,3 +29,15 @@
 * npm install
 * npm start
 
+
+<h2>Using the API</h2>
+* GET to http://localhost:9000/v1/register-user/<username> to register a user
+* GET to http://localhost:9000/v1/query/<user>/queryAllCoachingPlans/1 to get all coachingPlans
+* POST to http://localhost:9000/v1/invoke with body
+        {
+          "invokeArgs": [
+            "KEY", "Coach", "Coachee", "Goal"
+          ],
+          "invoker": "SomeUser",
+          "invokeFcn": "createCoachingPlan"
+        }
