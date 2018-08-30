@@ -13,6 +13,7 @@
          export PATH=$PATH:$GOROOT/bin   
     * In (username)/go : create src/github.com/hyperledger and cloned http://gerrit.hyperledger.org/r/fabric into it 
 - Install the platform-specific binaries https://hyperledger-fabric.readthedocs.io/en/latest/install.html 
+- guide for linux setup: https://medium.com/@patdhlk/how-to-install-go-1-9-1-on-ubuntu-16-04-ee64c073cd79
 
 <h2>Run blockchain</h2>
 
