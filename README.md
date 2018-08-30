@@ -22,8 +22,7 @@
     * peer0.org1.example.com
     * ca.example.com
     * cli
-    * couchdb
-    * orderer.example.com
+    * orderer.example.comto 
 - to redeploy chaincode: ./teardown.sh and restart (TODO - solve this more efficiently)
 
 <h2>Run backend</h2>
@@ -35,9 +34,11 @@
 - GET to http://localhost:9000/v1/register-user/<username> to register a user
 - GET to http://localhost:9000/v1/query/<user>/queryAllCoachingPlans/1 to get all coachingPlans
 - POST to http://localhost:9000/v1/invoke with body
+        ``` 
+
         {
           "invokeArgs": [
-            "KEY", "Coach", "Coachee", "Goal"
+            "KEY1", "Coach", "Coachee", "Goal"
           ],
           "invoker": "SomeUser",
           "invokeFcn": "createCoachingPlan"
