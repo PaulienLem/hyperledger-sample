@@ -11,7 +11,6 @@
          export GOROOT=/usr/local/opt/go/libexec
          export PATH=$PATH:$GOPATH/bin
          export PATH=$PATH:$GOROOT/bin   
-- Install the platform-specific binaries https://hyperledger-fabric.readthedocs.io/en/latest/install.html 
 - guide for linux setup: https://medium.com/@patdhlk/how-to-install-go-1-9-1-on-ubuntu-16-04-ee64c073cd79
 
 <h2>Run blockchain</h2>
