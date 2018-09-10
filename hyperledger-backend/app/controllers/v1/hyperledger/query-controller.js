@@ -3,12 +3,12 @@ const queryService = require('../../../services/query-service.js');
 function QueryController() {
 }
 
-function get(req, res, next) {
+async function get(req, res, next) {
     const enrollId=  req.params.enrollId;
     const fcn = req.params.fcn;
     const queryArgs = [req.params.queryArg]
     let rp;
-    queryService.query(enrollId, fcn, queryArgs).then((res)=>{
+    await queryService.query(enrollId, fcn, queryArgs).then((res)=>{
         console.log("queryres", res);
         rp = res;
     })

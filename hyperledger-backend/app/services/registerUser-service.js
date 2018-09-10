@@ -1,7 +1,6 @@
 'use strict';
 
 var Fabric_CA_Client = require('fabric-ca-client');
-var member_user = null;
 var basicService = require('./basic-service.js')
 var admin_user = null;
 var member_user = null;
